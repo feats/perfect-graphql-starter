@@ -1,0 +1,1 @@
+export default () => 'Lorem Ipsum';

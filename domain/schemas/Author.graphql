@@ -1,0 +1,6 @@
+type Author {
+  _id: Int!
+  firstName: String
+  lastName: String
+  posts: [Post]
+}

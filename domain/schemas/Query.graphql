@@ -1,0 +1,5 @@
+type Query {
+  getAuthor(_id: Int!): Author
+  getPostsByAuthor(authorId: Int!): [Post]
+  getPostsByTitle(titleContains: String!): [Post]
+}
