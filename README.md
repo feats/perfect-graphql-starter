@@ -54,8 +54,10 @@ npm start
 }
 ```
 
-* There is more you can try! Paste any of the following snippets there and check the result:
+# Examples
+There is more you can try! Go back to the [interactive tool](http://localhost:8080/graphiql/) and paste any of the following snippets there and check the result:
 
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getAuthor\(_id%3A%202\)%20%7B%20%20%23%20Almost%20the%20same%20as%0A%20%20%20%20firstName%20%20%20%20%20%20%20%20%20%20%23%20before%2C%20but%20with%20extra%0A%20%20%20%20lastName%20%20%20%20%20%20%20%20%20%20%20%23%20fields.%0A%20%20%20%20posts%20%7B%0A%20%20%20%20%20%20title%0A%20%20%20%20%20%20text%0A%20%20%20%20%20%20views%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D))
 ```graphql
 {
   getAuthor(_id: 2) {  # Almost the same as
@@ -70,9 +72,10 @@ npm start
 }
 ```
 
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByTitle\(titleContains%3A%20%22fear%22\)%20%7B%0A%20%20%20%20title%0A%20%20%20%20text%0A%20%20%20%20views%0A%20%20%20%20author%20%7B%0A%20%20%20%20%20%20firstName%0A%20%20%20%20%20%20lastName%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D))
 ```graphql
 {
-  getPostsByTitle(titleContains: "whatever") {
+  getPostsByTitle(titleContains: "fear") {
     title
     text
     views
@@ -84,6 +87,7 @@ npm start
 }
 ```
 
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByAuthor\(authorId%3A1\)%20%7B%20%20%23%20You%20can%20try%20adding%0A%20%20%20%20title%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20the%20%27author%27%20field%0A%20%20%20%20text%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20as%20seen%20before%0A%20%20%20%20views%0A%20%20%7D%0A%7D))
 ```graphql
 {
   getPostsByAuthor(authorId:1) {  # You can try adding
