@@ -1,4 +1,4 @@
-# apollo-starter-kit
+# perfect-graphql-starter
 
 Boilerplate for getting off the ground quickly when writing a GraphQL server.
 
@@ -7,8 +7,8 @@ See also [Tutorial: How to build a GraphQL server](https://medium.com/apollo-sta
 ## Getting started
 
 ```sh
-git clone https://github.com/apollostack/apollo-starter-kit
-cd apollo-starter-kit
+git clone https://github.com/apollostack/perfect-graphql-starter
+cd perfect-graphql-starter
 npm install
 npm run start
 ```

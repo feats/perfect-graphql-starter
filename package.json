@@ -1,12 +1,12 @@
 {
-  "name": "apollo-starter-kit",
+  "name": "perfect-graphql-starter",
   "private": true,
   "version": "1.0.0",
   "description": "'Perfect' set of code to write a GraphQL server with Apollo",
   "engine": "node >= 5.11.1",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quadric/apollo-starter-kit.git"
+    "url": "git+https://github.com/Quadric/perfect-graphql-starter.git"
   },
   "keywords": [
     "Node.js",
@@ -19,9 +19,9 @@
   "author": "Victor Duarte <contact@quadric.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Quadric/apollo-starter-kit/issues"
+    "url": "https://github.com/Quadric/perfect-graphql-starter/issues"
   },
-  "homepage": "https://github.com/Quadric/apollo-starter-kit#readme",
+  "homepage": "https://github.com/Quadric/perfect-graphql-starter#readme",
   "scripts": {
     "start": "nodemon server/index.js",
     "debug": "nodemon server/index.js --exec babel-node-debug",
