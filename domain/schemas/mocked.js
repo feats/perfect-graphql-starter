@@ -1,6 +1,6 @@
 import { addMockFunctionsToSchema } from 'graphql-tools';
+import mocks from '/domain/mocks';
 import schema from './executable';
-import mocks from '../mocks';
 
 export default addMockFunctionsToSchema({
   mocks,

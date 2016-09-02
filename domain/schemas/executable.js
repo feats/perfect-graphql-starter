@@ -1,6 +1,6 @@
 import { makeExecutableSchema } from 'graphql-tools';
+import resolvers from '/domain/resolvers';
 import schemas from './index';
-import resolvers from '../resolvers';
 
 export default makeExecutableSchema({
   resolvers,

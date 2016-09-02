@@ -1,9 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { apolloExpress, graphiqlExpress } from 'apollo-server';
-import schema from '../domain/schemas/executable';
-import repositories from '../domain/repositories';
-import resolvers from '../domain/resolvers';
+import schema from '/domain/schemas/executable';
+import repositories from '/domain/repositories';
+import resolvers from '/domain/resolvers';
 import connectors from './connectors';
 
 // Initial fixtures
