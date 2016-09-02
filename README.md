@@ -10,9 +10,10 @@
 
 ## Why
 
-Get real, we could never agree on a perfect boilerplate project for any technology; It would not be different for a GraphQL-based project then. But it doesn't mean we should not try to get as close as we can get from it.
+_There will never be an agreement on a perfect boilerplate project for any technology we are aware of and it would not be different for a GraphQL-based project. But it doesn't mean we should not try to get as close as we can get from it. So please don't mind our pretentious project name, it's just a catchy one._
 
-This project aims to be a place for the community to **spread best practices** and the use of related technologies.
+This project aims to be a place for the community to **spread good practices** and the use of related technologies.
+
 
 It is inspired by the tutorial [How to build a GraphQL server](https://medium.com/apollo-stack/tutorial-building-a-graphql-server-cddaa023c035#.wy5h1htxs) and its [repository](https://github.com/apollostack/apollo-starter-kit).
 
