@@ -2,11 +2,17 @@
 
 > "Have no fear of perfection, you’ll never reach it." - Salvador Dali
 
+
+
+<p align="center">
+  <img src="http://www.pixhoster.info/f/2016-09/8516908bc1552a5c3dcdb242611ee506.jpg" />
+</p>
+
 ## Why
 
-Get real, we could never agree on a perfect boilerplate project for any technology; It would not be different for a GraphQL-based project then. But it doesn't mean we should not try.
+Get real, we could never agree on a perfect boilerplate project for any technology; It would not be different for a GraphQL-based project then. But it doesn't mean we should not try to get as close as we can get from it.
 
-This project aims to be a place for the community to spread **best practices** and the use of related technologies.
+This project aims to be a place for the community to **spread best practices** and the use of related technologies.
 
 It is inspired by the tutorial [How to build a GraphQL server](https://medium.com/apollo-stack/tutorial-building-a-graphql-server-cddaa023c035#.wy5h1htxs) and its [repository](https://github.com/apollostack/apollo-starter-kit).
 
