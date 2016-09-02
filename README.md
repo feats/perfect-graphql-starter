@@ -40,7 +40,7 @@ npm start
 
 * Hit the play button (cmd-return), then you should get this on the right side:
 
-```graphql
+```json
 {
   "data": {
     "getAuthor": {
