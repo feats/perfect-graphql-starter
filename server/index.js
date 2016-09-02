@@ -24,7 +24,7 @@ app.use('/graphql', bodyParser.json(), apolloExpress({
   formatError(error) {
     console.error(error.stack);
     return error;
-  }
+  },
 }));
 
 app.use(

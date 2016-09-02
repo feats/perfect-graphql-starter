@@ -26,6 +26,7 @@ npm start
 
 * Paste this on the left side of the page:
 
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getAuthor\(_id%3A%202\)%20%7B%0A%20%20%20%20lastName%0A%20%20%20%20posts%20%7B%0A%20%20%20%20%20%20text%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D))
 ```graphql
 {
   getAuthor(_id: 2) {
