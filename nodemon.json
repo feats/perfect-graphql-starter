@@ -10,7 +10,7 @@
     "js": "babel-node"
   },
   "ext": ".js,.json,.graphql",
-  "watch": "../",
+  "watch": "./",
   "events": {
     "start": "mkdir -p data && mongod --dbpath ./data > /dev/null"
   }
