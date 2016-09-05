@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { apolloExpress, graphiqlExpress } from 'apollo-server';
-import schema from '/domain/schemas/executable';
+import schema from '/domain/schemas';
 import repositories from '/domain/repositories';
 import resolvers from '/domain/resolvers';
 import connectors from './connectors';
