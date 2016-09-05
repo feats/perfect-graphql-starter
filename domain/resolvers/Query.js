@@ -1,11 +1,11 @@
 export default {
   getAuthor(root, { _id }, context) {
-    return context.repositories.Author.getById(_id);
+    return context.models.Author.objects.getById(_id);
   },
   getPostsByTitle(root, { titleContains }, context) {
-    return context.repositories.Post.findByTitle({ contains: titleContains });
+    return context.models.Post.objects.findByTitle({ contains: titleContains });
   },
   getPostsByAuthor(root, { authorId }, context) {
-    return context.repositories.Post.findByAuthor(authorId);
+    return context.models.Post.objects.findByAuthor(authorId);
   },
 };

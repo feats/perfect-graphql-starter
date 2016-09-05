@@ -3,7 +3,7 @@ import Post from './Post';
 import Query from './Query';
 import String from './String';
 
-export default {
+export {
   Author,
   Post,
   Query,
