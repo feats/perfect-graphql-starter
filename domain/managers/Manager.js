@@ -1,5 +1,6 @@
 export default class Manager {
-  constructor(connectors) {
+  constructor(ModelClass, connectors) {
+    this.ModelClass = ModelClass;
     this.connectors = connectors;
   }
 

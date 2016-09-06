@@ -1,5 +1,4 @@
-import { addMockFunctionsToSchema, makeExecutableSchema } from 'graphql-tools';
-import * as resolvers from '/domain/resolvers';
+import { addMockFunctionsToSchema, buildSchemaFromTypeDefinitions } from 'graphql-tools';
 import * as mocks from '/domain/mocks';
 import Author from './Author.graphql';
 import Post from './Post.graphql';
@@ -13,18 +12,12 @@ export const raw = [
   schema,
 ];
 
-const executable = makeExecutableSchema({
-  resolvers,
-  typeDefs: raw,
-});
+const executable = buildSchemaFromTypeDefinitions(raw);
 
 export const mocked = addMockFunctionsToSchema({
   mocks,
-  preserveResolvers: true,
-  schema: makeExecutableSchema({
-    resolvers,
-    typeDefs: raw,
-  }),
+  preserveResolvers: false,
+  schema: buildSchemaFromTypeDefinitions(raw),
 });
 
 export default executable;

@@ -21,4 +21,4 @@ for (const name of Object.keys(models)) {
   model.defineManagers(model);
 }
 
-export default models;
+module.exports = models;

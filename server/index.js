@@ -2,9 +2,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { apolloExpress, graphiqlExpress } from 'apollo-server';
 import schema from '/domain/schemas';
-import resolvers from '/domain/resolvers';
 import connectors from './connectors';
-import models from './models';
+import resolvers from './resolvers';
 
 // Initial fixtures
 require('./fixtures').run(connectors.MongoDB.connect());
@@ -15,9 +14,7 @@ const app = express();
 app.use('/graphql', bodyParser.json(), apolloExpress({
   schema,
   resolvers,
-  context: {
-    models,
-  },
+  context: {},
   formatError(error) {
     console.error(error.stack);
     return error;

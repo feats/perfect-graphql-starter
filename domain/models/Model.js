@@ -2,8 +2,8 @@ import _ from 'lodash';
 import { Manager } from '/domain/managers';
 
 export default class Model {
-  constructor(props) {
-    _.assign(this, props);
+  constructor(raw) {
+    this.cached = raw;
   }
 
   static get managers() {
@@ -35,7 +35,7 @@ export default class Model {
       const ManagerClass = target.managers[name];
 
       Reflect.defineProperty(target, name, {
-        value: new ManagerClass(target.connectors),
+        value: new ManagerClass(target, target.connectors),
       });
     }
 
