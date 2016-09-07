@@ -5,6 +5,30 @@ import * as models from './models';
 const resolvers = {};
 const typeMap = schemas.getTypeMap();
 
+function guardian(fieldType, innerResolver) {
+  return (raw, args, context) => {
+    return Reflect.apply(innerResolver, null, [raw, args, context]).then((output) => {
+      const model = models[(fieldType.ofType || fieldType).name];
+
+      if (fieldType.ofType) { // field is a list
+        return output.filter((item) => {
+          if (!Reflect.apply(model.allow.read, item, [context])) {
+            throw new Error(`'Read' permission not granted by ${model.name}`);
+          }
+
+          return true;
+        });
+      }
+
+      if (!Reflect.apply(model.allow.read, output, [context])) {
+        throw new Error(`'Read' permission not granted by ${model.name}`);
+      }
+
+      return output;
+    });
+  };
+}
+
 function mapper(Definition, field) {
   return (raw, args, context) => {
     const instance = new Definition(raw);
@@ -24,11 +48,25 @@ for (const type of Object.values(typeMap)) {
 
   resolvers[type.name] = {};
 
-  const definedFields = Object.keys(fields)
-    .filter((field) => (Reflect.has(models[type.name].prototype, field)));
+  const definedTypes = Object.keys(fields)
+    .filter((fieldName) => {
+      const fieldType = fields[fieldName].type;
 
-  for (const field of definedFields) {
-    resolvers[type.name][field] = mapper(models[type.name], field);
+      return models[(fieldType.ofType || fieldType).name];
+    });
+
+  const definedFields = Object.keys(fields)
+    .filter((fieldName) => (Reflect.has(models[type.name].prototype, fieldName)));
+
+  for (const fieldName of definedFields) {
+    resolvers[type.name][fieldName] = mapper(models[type.name], fieldName);
+  }
+
+  for (const fieldName of definedTypes) {
+    const fieldType = fields[fieldName].type;
+    const resolver = resolvers[type.name][fieldName] || ((raw) => (raw));
+
+    resolvers[type.name][fieldName] = guardian(fieldType, resolver);
   }
 }
 

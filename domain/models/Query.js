@@ -2,7 +2,7 @@ import Author from './Author';
 import Model from './Model';
 import Post from './Post';
 
-export default class Query extends Model {
+export default class Query {
   getAuthor({ _id }, context) {
     return Author.objects.getById(_id);
   }
