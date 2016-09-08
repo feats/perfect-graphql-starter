@@ -1,4 +1,4 @@
-import { Model } from '/graph-object';
+import { Model, allow } from '/graph-object';
 import { PostManager } from '/domain/managers';
 import Author from './Author';
 
@@ -16,7 +16,7 @@ export default class Post extends Model {
   }
 }
 
-Model.authorize(Post, {
+allow(Post, {
   read(context) {
     return this.author._id === context.userId || !this.private;
   },

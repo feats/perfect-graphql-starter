@@ -12,15 +12,6 @@ export default class Model {
     };
   }
 
-  static authorize(Sub, crud) {
-    const base = Reflect.get(Sub, 'allow');
-
-    Sub.allow = {
-      ...base,
-      ...crud,
-    };
-  }
-
   // target: Model instance, connectors: [ { connector, collection, name } ]
   static defineConnectors(target, connectors) {
     if (!Array.isArray(connectors)) {
