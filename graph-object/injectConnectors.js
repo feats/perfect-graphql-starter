@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import initializeManagers from './initializeManagers';
 
 // target: Model instance, connectors: [ { connector, collection, name } ]
 export default (target, connectors) => {
@@ -15,5 +16,5 @@ export default (target, connectors) => {
     throw new Error('Model could not be connected to the data source');
   }
 
-  return target;
+  return initializeManagers(target);
 };
