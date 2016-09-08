@@ -1,6 +1,25 @@
 import Manager from './Manager';
 
 export default class Model {
+  static managers = {
+    objects: Manager,
+  };
+
+  static allow = {
+    create(context) {
+      return true;
+    },
+    read(context) {
+      return true;
+    },
+    update(context) {
+      return true;
+    },
+    delete(context) {
+      return true;
+    },
+  };
+
   constructor(raw) {
     this._raw = {
       ...raw,
@@ -16,25 +35,4 @@ export default class Model {
       });
     }
   }
-
-  static get managers() {
-    return {
-      objects: Manager,
-    };
-  }
 }
-
-Model.allow = {
-  create(context) {
-    return true;
-  },
-  read(context) {
-    return true;
-  },
-  update(context) {
-    return true;
-  },
-  delete(context) {
-    return true;
-  },
-};
