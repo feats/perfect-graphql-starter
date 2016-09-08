@@ -1,4 +1,4 @@
-import { Model, allow } from '/graph-object';
+import { Model, allow } from 'graph-object';
 import { PostManager } from '/domain/managers';
 import Author from './Author';
 

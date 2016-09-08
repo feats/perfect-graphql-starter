@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { apolloExpress, graphiqlExpress } from 'apollo-server';
 import { addResolveFunctionsToSchema } from 'graphql-tools';
-import { generateResolvers } from '/graph-object';
+import { generateResolvers } from 'graph-object';
 import schema from '/domain/schemas';
 import connectors from './connectors';
 import * as models from './models';

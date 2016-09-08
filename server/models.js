@@ -1,4 +1,4 @@
-import { injectConnectors } from '/graph-object';
+import { injectConnectors } from 'graph-object';
 import * as models from '/domain/models';
 import connectors from './connectors';
 

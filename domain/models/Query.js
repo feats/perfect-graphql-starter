@@ -13,5 +13,4 @@ export default class Query {
   getPostsByAuthor({ authorId }, context) {
     return Post.objects.findByAuthor(authorId);
   }
-
 }
