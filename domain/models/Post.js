@@ -1,6 +1,6 @@
+import { Model } from '/graph-object';
 import { PostManager } from '/domain/managers';
 import Author from './Author';
-import Model from './Model';
 
 export default class Post extends Model {
   static get managers() {

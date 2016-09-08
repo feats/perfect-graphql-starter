@@ -1,4 +1,4 @@
-import Model from './Model';
+import { Model } from '/graph-object';
 import Post from './Post';
 
 export default class Author extends Model {

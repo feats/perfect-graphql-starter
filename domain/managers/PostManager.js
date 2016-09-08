@@ -1,4 +1,4 @@
-import Manager from './Manager';
+import { Manager } from '/graph-object';
 
 export default class PostManager extends Manager {
   findByAuthor(_id) {

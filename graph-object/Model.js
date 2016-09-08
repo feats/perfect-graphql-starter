@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { Manager } from '/domain/managers';
+import Manager from './Manager';
 
 export default class Model {
   constructor(raw) {
