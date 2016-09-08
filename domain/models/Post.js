@@ -10,9 +10,7 @@ export default class Post extends Model {
   }
 
   get author() {
-    return this.cached.author instanceof Author
-      ? this.cached.author
-      : (this.cached.author = Author.objects.getById(this.cached.author._id));
+    return this._author || (this._author = Author.objects.getById(this._raw.author._id));
   }
 }
 

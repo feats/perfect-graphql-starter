@@ -1,7 +1,5 @@
 import Model from './Model';
 
-// TODO! remove `output.cached` stuff when using Proxy.
-
 // TODO! move guardian out of the first function block
 
 // TODO! guardian should be connected to the models, not to the resolvers.
@@ -11,9 +9,8 @@ function mapper(Definition, field) {
   return (raw, args, context) => {
     const instance = new Definition(raw);
     const resolver = instance[field];
-    const output = typeof resolver === 'function' ? resolver.apply(instance, [args, context]) : resolver;
 
-    return (output instanceof Model) ? output.cached : output;
+    return typeof resolver === 'function' ? resolver.apply(instance, [args, context]) : resolver;
   };
 }
 
@@ -44,7 +41,6 @@ export default function (schemas, models) {
       });
     };
   }
-
 
 
   for (const type of Object.values(typeMap)) {

@@ -3,7 +3,19 @@ import Manager from './Manager';
 
 export default class Model {
   constructor(raw) {
-    this.cached = raw;
+    this._raw = {
+      ...raw,
+    };
+
+    for (const key of Object.keys(raw)) {
+      const existent = this[key];
+
+      Object.defineProperty(this, key, {
+        get() {
+          return existent || this._raw[key];
+        },
+      });
+    }
   }
 
   static get managers() {
