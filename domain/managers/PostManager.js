@@ -1,6 +1,6 @@
-import Repository from './Repository';
+import Manager from './Manager';
 
-export default class Post extends Repository {
+export default class PostManager extends Manager {
   findByAuthor(_id) {
     return this.find({ 'author._id': _id });
   }
