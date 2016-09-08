@@ -4,6 +4,7 @@
     ["babel-root-slash-import", {
       "rootPathSuffix": "./"
     }],
-    "babel-plugin-inline-import"
+    "babel-plugin-inline-import",
+    "transform-class-properties"
   ]
 }

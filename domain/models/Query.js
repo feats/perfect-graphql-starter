@@ -1,5 +1,4 @@
 import Author from './Author';
-import Model from './Model';
 import Post from './Post';
 
 export default class Query {
@@ -14,5 +13,4 @@ export default class Query {
   getPostsByAuthor({ authorId }, context) {
     return Post.objects.findByAuthor(authorId);
   }
-
 }

@@ -80,27 +80,23 @@ There is more you can try! Go back to the [interactive tool](http://localhost:80
 }
 ```
 
-([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByTitle\(titleContains%3A%20%22fear%22\)%20%7B%0A%20%20%20%20title%0A%20%20%20%20text%0A%20%20%20%20views%0A%20%20%20%20author%20%7B%0A%20%20%20%20%20%20firstName%0A%20%20%20%20%20%20lastName%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D))
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByTitle\(titleContains%3A%20%22fear%22\)%20%7B%0A%20%20%20%20title%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20Try%20adding%20the%20%27author%27%0A%20%20%20%20text%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20field%20anywhere%20inside%0A%20%20%20%20views%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20this%20block%20%3B\)%0A%20%20%7D%0A%7D&variables=))
 ```graphql
 {
   getPostsByTitle(titleContains: "fear") {
-    title
-    text
-    views
-    author {
-      firstName
-      lastName
-    }
+    title               # Try adding the 'author'
+    text                # field anywhere inside
+    views               # this block ;)
   }
 }
 ```
 
-([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByAuthor\(authorId%3A1\)%20%7B%20%20%23%20You%20can%20try%20adding%0A%20%20%20%20title%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20the%20%27author%27%20field%0A%20%20%20%20text%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20as%20seen%20before%0A%20%20%20%20views%0A%20%20%7D%0A%7D))
+([Run](http://localhost:8080/graphiql/?query=%7B%0A%20%20getPostsByAuthor\(authorId%3A1\)%20%7B%20%20%23%20This%20author%20has%20a%20private%0A%20%20%20%20title%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20post.%20You%20should%20get%20an%0A%20%20%20%20text%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%23%20Authorization%20error.%0A%20%20%20%20views%0A%20%20%7D%0A%7D&variables=))
 ```graphql
 {
-  getPostsByAuthor(authorId:1) {  # You can try adding
-    title                         # the 'author' field
-    text                          # as seen before
+  getPostsByAuthor(authorId:1) {  # This author has a private
+    title                         # post. You should get an
+    text                          # Authorization error.
     views
   }
 }

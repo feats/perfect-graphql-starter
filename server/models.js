@@ -1,3 +1,4 @@
+import { injectConnectors } from 'graph-object';
 import * as models from '/domain/models';
 import connectors from './connectors';
 
@@ -13,12 +14,10 @@ for (const name of Object.keys(models)) {
     continue;
   }
 
-  model.defineConnectors(model, {
+  injectConnectors(model, {
     connector: new connectors.MongoDB(),
     collection: collections[name],
   });
-
-  model.defineManagers(model);
 }
 
 module.exports = models;
