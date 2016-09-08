@@ -15,3 +15,9 @@ export default class Post extends Model {
       : (this.cached.author = Author.objects.getById(this.cached.author._id));
   }
 }
+
+Model.authorize(Post, {
+  read(context) {
+    return this.author._id === context.userId || !this.private;
+  },
+});

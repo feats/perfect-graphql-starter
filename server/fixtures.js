@@ -12,6 +12,7 @@ module.exports = {
         connector.collection('posts').insertMany([
           { _id: 1, author: { _id: 1 }, title: 'Perfection fear', text: 'Have no fear of perfection, you’ll never reach it.', views: 20 },
           { _id: 2, author: { _id: 2 }, title: 'Catch excellence', text: 'Perfection is not attainable, but if we chase perfection we can catch excellence.', views: 61 },
+          { _id: 3, author: { _id: 1 }, private: true, title: 'The Secret Life of Salvador Dalí', text: 'this is a private post!', views: 1 },
         ]);
       });
     }).catch(err => {
