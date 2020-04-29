@@ -1,3 +1,13 @@
+**DEPRECATION NOTE:** 
+
+_This project has started a couple of years ago as we intended to create a way to allow developers to focus on building a structured domain based on well defined patterns instead of having the mess of loose uncoupled resolvers._
+
+_Unfortunately we haven’t had the proper time to develop this project further, so it has never gained enough momentum. Since then, as well, lots has changed in the ecosystem. A lot of the goals of this project have already been achieved by other projects, such as https://prisma.io._
+
+_Prisma is probably the way to go if you look for something mature and reliable. If you feel adventurous, though, you can take a look at our new experiment: https://github.com/zvictor/faugra._
+
+---
+
 # Perfect GraphQL Starter
 
 > "Have no fear of perfection, you’ll never reach it." - Salvador Dali
